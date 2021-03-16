@@ -43,7 +43,7 @@
 
     ## 3. 실습 환경 구축
 
-    1. Node.js 설치 → cmd 에 node 입력 후 설치 확인
+    Node.js 설치 → cmd 에 node 입력 후 설치 확인
     
 
 
