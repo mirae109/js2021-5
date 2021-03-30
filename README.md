@@ -1,4 +1,191 @@
 # 김미래[202030404]
+
+## [03월 30일]
+
+- 중첩 조건문
+
+    ```jsx
+    let date = new Date();
+    let hours = date.getHours();
+
+    if (hours < 11 ){
+    		console.log("아침");
+    } else {
+    	if (hours < 15) {
+    	console.log("점심");
+    	} else {
+    	console.log("저녁");{
+    	}
+    }
+    ```
+
+- note 논리 연산자와 조건문
+
+    ```jsx
+    else if (4.2<= score && score < 4.5)
+    ```
+
+    주의점 : 4.0점 부터 4.5점을 가리킬 때 
+
+    → 4.2 ≤ score && score < 4.5 
+
+    ( and 연산자 사용)
+
+    조건이 어떤 범위를 가리킬때는 if문을 쓰는 거고,  특정 값을 나타낼 때는 swich문을 쓴다. 
+
+- switch 조건문
+
+    ```jsx
+    let input = 32; 
+
+    switch (input % 2){
+    	case 0:
+    			console.log("짝");
+    			break;
+    	case 1:
+    			console.log("홀");
+    			break;
+    }
+    ```
+
+    ```jsx
+    let date = new Date();
+    console.log(date.getMonth());
+
+    switch (date.getMonth()+1){
+    	case 12:
+    	case 1:
+    	case 2:
+    		console.log("겨울");
+    		break;
+    	case 3:
+    	case 4:
+    	case 5:
+    		console.log("봄");
+    		break;
+    	case 6:
+    	case 7:
+    	case 8:
+    		console.log("여름");
+    		break;
+    	case 9:
+    	case 10:
+    	case 11:
+    		console.log("가을");
+    		break;
+    default:
+    	console.log("외계인")
+    	break;
+    }
+    ```
+
+주의 : case 는 땡땡( : ) 임을 기억하자! + defalt 도 ( : ) 임.
+
+- 삼항 연산자
+
+    ```jsx
+    < 불 표현식 > ? <참> : <거짓>
+    console.log(number % 2 == 0 ? true : false );
+    ```
+
+주의 : 연산 결과에 따라 변하는 식에는 적합하지 않다. 
+
+- 삼항 연산자로 변수 초기화를 확인하기  ( 자주 사용하진 않음 )  ❓
+
+    ```jsx
+    let test;
+
+    test = test ? test : "초기화합니다_1";
+    console.log(test);
+    test = test ? test : "초기화합니다_2";
+    console.log(test);
+    ```
+
+- 입력하기
+
+    ```jsx
+    let input = prompt("입력해주세요");
+    console.log(input);
+
+    const repl = require("repl");
+
+    repl.start({
+    	prompt: "숫자 입력>",
+    	eval: ( command, context, filename, callback) => {
+    		let number = Number(command);
+    		
+    		if (isNaN(number)){
+    			console.log("숫자가 아님");
+    	 } else {
+    			console.log("숫자");
+    	 }
+
+    			callback();
+    	}
+    });
+    ```
+
+    require 는 어디에 쓰는 걸까?
+
+## 4장 반복문
+
+- 배열
+
+    ```jsx
+    let foo =["피자", "치킨", "햄버거", '돈가스' ]
+
+    console.log(foo[1]);
+    ```
+
+- while 문
+
+    ```jsx
+    let i = 0;
+    let array =[23, 35, 345, 234];
+
+    while ( i < array.length ){
+    	console.log( i + "번째 출력 : " + array[i]);
+    i++
+    }
+    ```
+
+    for문과 while문은 서로 변환 가능하지만, 
+    반복의 횟수가 미정일 때 while문 사용한다. 
+
+- for문
+
+    ```jsx
+    let output = 0;
+
+    for (let i = 0; i <= 100; i++ ){
+    	output += i;
+    }
+
+    console.log(output);
+    ```
+
+- 역 for문  ( i - - )
+
+- for in 문 , fot of 문
+
+    ```jsx
+    let array = ["피자", "치킨", "햄버거", '돈가스' ];
+
+    for (let i in array){
+    		console.log( '${i}번째 요소: ${array[i]}');
+    }
+    ```
+
+    ```jsx
+    let array = ["피자", "치킨", "햄버거", '돈가스' ];
+
+    for ( let item of araaay) {
+    		console.log(item);
+    }
+    ```
+
+ for in : 인덱스 주소 필요해 
+ for of : 인덱스 없이 값만 쓸꺼야
 ## [03월23일]
 
 - **피제수/제수**
