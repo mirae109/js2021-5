@@ -1,5 +1,188 @@
 # 김미래[202030404]
 
+## [04월 06일]
+- for in 반복문
+
+    ```jsx
+    let foo = [1,2,3,4,5];
+
+    for ( let i in foo ){
+        console.log(`${i}번째 요소는 ${foo[i]}이다.`)
+    }
+    ```
+
+- for of 반복문  (배열 값만 가져올 때)
+
+    ```jsx
+    let foo = [1,2,3,4,5];
+
+    for ( let item of foo ){
+        console.log(item) 
+    }
+    ```
+
+- 중첩 반복문 (삼각 별 찍기 )
+
+    ```jsx
+    let output = "";
+
+    for (let i = 0; i < 10; i++){
+        for (let j = 0; j < i+1; j++) {
+        output += "*";
+        }
+    output += "\n";
+
+    }
+    output += "\n";
+    console.log(output);
+    ```
+
+    1. 일반 for문과 달리 let 을 적음
+    2. printf 대신 output 
+    3. console.log() 를 통해 출력을 함
+
+- 중첩 반복문 ( 역삼각 별 )
+
+    ```jsx
+    let output = "";
+
+    for ( let i = 0; i < 10; i++){
+        for (let j = 0; j < 10 - i; j++){
+            output += ' '; }
+        for (let j = 0; j < i + 1; j++){
+            output += '*'; }
+        output += '\n';
+    }
+    console.log(output);
+    ```
+
+    - 정삼각 별 ( 정방향 )
+
+    ```jsx
+    let output = "";
+
+    for ( let i = 0; i < 10; i++){
+
+        for (let j = 0; j < 10 - i; j++){
+            output += ' '; }
+
+        for (let j = 0; j < i + 1; j++){
+            output += '*'; }
+
+        for (let j = 1; j < i + 1; j++){
+            output += '*'; }
+
+        for (let j = 0; j < 10 - i; j++){
+            output += ' '; }
+
+        output += '\n';
+    }
+    console.log(output);
+    ```
+
+    ```jsx
+    let output = "";
+
+    for ( let i = 0; i < 10; i++){
+
+        for (let j = 0; j < i + 1; j++){
+            output += ' '; }
+
+        for (let j = 0; j < 10 - i; j++){
+            output += '*'; }
+
+        for (let j = 1; j < 10 - i; j++){
+            output += '*'; }
+
+        for (let j = 0; j < i + 1; j++){
+            output += ' '; }
+
+        output += '\n';
+    }
+    console.log(output);
+    ```
+
+- 다이아 모양
+
+    ```jsx
+    let output = "";
+
+    for ( let i = 0; i < 11; i++){
+
+        for (let j = 0; j < 10 - i; j++){
+            output += ' '; }
+
+        for (let j = 0; j < i + 1; j++){
+            output += '*'; }
+
+        for (let j = 1; j < i + 1; j++){
+            output += '*'; }
+
+        for (let j = 0; j < 10 - i; j++){
+            output += ' '; }
+
+        output += '\n';
+    }
+    for ( let i = 0; i < 10; i++){
+
+        for (let j = 0; j < i + 1; j++){
+            output += ' '; }
+
+        for (let j = 0; j < 10 - i; j++){
+            output += '*'; }
+
+        for (let j = 1; j < 10 - i; j++){
+            output += '*'; }
+
+        for (let j = 0; j < i + 1; j++){
+            output += ' '; }
+
+        output += '\n';
+    }
+    console.log(output);
+    ```
+
+- break 키워드
+
+    ```jsx
+    let i =0; 
+    let array = [1,31,321,57,8];
+    let output;
+
+    while (true) {
+    	if (array[i]%2 == 0){
+    	output = array[i];
+    	break;
+    }
+    i = i + 1;
+    }
+
+    console.log(`처음 발견한 짝수는 ${output}입니다`) 
+    ```
+
+- continue  키워드
+
+    ```jsx
+    for (let i = 1; i < 10; i++){
+    	if ( i % 2 == 0 ){
+    		continue;
+      }
+    console.log(i)
+    }
+    ```
+
+    ```jsx
+    for (let i = 1; i < 10; i++){
+    	if ( i % 2 == 0 ){
+    		console.log(i)
+      }
+    }
+    ```
+
+    - 스코프 == 블럭 ( 변수 사용 범위 )
+    - 호이스팅 == 작업 ( 별로 안중요 )
+    - var → let 으로 바뀜 ( 인터넷 익스플로어에선 var 를 사용 )
+
 ## [03월 30일]
 
 - 중첩 조건문
