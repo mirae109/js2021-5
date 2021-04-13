@@ -1,5 +1,193 @@
 # 김미래[202030404]
 
+##[04월 13일]
+1. **익명 함수**  
+    - 생성 방법
+
+    ```java
+    let <변수명> = funcion() { }; 
+    ```
+
+    - 예제
+
+    ```java
+    let foo = function(){
+    	console.log("첫번째줄");
+    	console.log("두번째줄");
+    };
+    foo();
+    console.log(foo);
+    ```
+
+2. **선언적 함수** 
+    - 생성 방법
+
+    ```java
+    funtion 함수명(){  }
+    ```
+
+    - 예제
+
+    ```jsx
+    funtion foo(){
+    	console.log("첫 줄");
+    	console.log("두번째줄");
+    }
+    console.log(foo);
+    ```
+
+3. **화살표 함수** 
+
+    funtion 키워드를 안쓰는 대신 소괄호를 가리킨다. 
+
+    - 생성 함수
+
+        ```jsx
+        let 함수명 = () => {
+        ```
+
+    - 예제
+
+        ```jsx
+        let foo = () => {
+        	console.log("첫줄");
+        	console.log("두번째줄");
+        }
+        foo();
+        console.log(foo);
+        ```
+
+    **4. 함수의 기본 형태**
+
+    - 예제
+
+        ```jsx
+        funton power(x){
+         return x * x;
+        }
+        console.log(power(10));
+        console.log(power(20));
+        ```
+
+        ```jsx
+        funton foo(x){
+        let bar x * x;
+        return bar;
+        }
+        console.log(bar(10));
+        console.log(bar(20));
+        ```
+
+    5.  **함수 매개 변수 초기화**
+
+    ```jsx
+    funtion print(message){
+    	console.log(`"${message}"라고 말했습니다.`);
+    print("안녕");
+    ```
+
+    note 화살표 함수와 리턴
+
+    ```jsx
+    let power = (x) => { x*x; }
+
+    console.log(lpower(10));
+    console.log(lpower(10));
+    ```
+
+    6. **함수의 기본 활용 형태** 
+
+    - 매개변수와 리턴 예제
+
+        ```jsx
+
+        ```
+
+    ## 4 **함수 매개 변수 초기화**
+
+    - if문 예제
+
+    ```jsx
+    function print(name, count){
+    // !count는 count에 값이 안들어왔을때.. 
+    if(!count){
+        count = 1;
+    }
+    console.log(`${name}이 ${count}개 있습니다.`)
+    }
+    print("사과");
+    ```
+
+    - 조건문 예제
+
+    ```jsx
+    function print(name, count){
+    	count = count || 1;
+
+    console.log(`${name}이 ${count}개 있습니다.`)
+    }
+
+    print("사과");
+    ```
+
+    - defalt 예제
+
+    ```jsx
+    function print(name = "#", count = "n"){
+
+    console.log(`${name}이 ${count}개 있습니다.`)
+    }
+
+    print("사과");
+    ```
+
+    ## 5 콜백 함수
+
+    ```jsx
+    funtion tenTimes(foo){
+    	for(let i =0; i < 10; i++){
+    		foo();
+    	}
+    }
+    tenTimes(funtion(){
+    	console.log("함수 호출");
+    });
+
+    //매개변수로 함수를 받을 수 있는 js. 
+    // 해당 예제에선 무명 함수를 썼음. 
+    ```
+
+    ## 6 표준 내장 함수
+
+    - 숫자 변환 함수
+
+        ```jsx
+        let inputA = "1";
+        let inputA = "1.1";
+        let inputA = "1동";
+        //문자열과 숫자 함께 있는 간 젼화 ㅌ
+        console.log(parseInt(input1))
+        console.log(parseFloat(input2))
+        console.loA(number(input3))
+        ```
+
+     
+
+    - 타이머 함수
+
+        ```jsx
+        //1초후 
+        setTimeout(() => {
+        	console.log("1초");
+        }, 1000); 
+        ```
+
+        ```jsx
+        //1초마다
+        setInterval(() => {
+        	console.log("1초");
+        }, 1000); 
+        ```
 ## [04월 06일]
 - for in 반복문
 
