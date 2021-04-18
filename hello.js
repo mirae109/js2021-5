@@ -1,8 +1,12 @@
 //변수 선언 
-let foo = 1;
+let foo = ["아메리카노","카페라떼", "카페모카"];
 
-//반복 
-for(let i=1; i <20; i++){
-	foo *= i;
+//for in 
+for (let i in foo){
+	console.log(`${i}번째 요소: ${foo[i]}`);
 }
-console.log(foo);
+
+//for of 
+for(let item of foo){
+	console.log(item);
+}
