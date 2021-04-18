@@ -1,12 +1,18 @@
-//변수 선언 
-let foo = ["아메리카노","카페라떼", "카페모카"];
+let foo = "";
 
-//for in 
-for (let i in foo){
-	console.log(`${i}번째 요소: ${foo[i]}`);
-}
+for(let i=0; i<10; i++){
+	for(let j=0; j<10-i; j++){
+		foo +=' ';
+	}
 
-//for of 
-for(let item of foo){
-	console.log(item);
+	for (let j =0; j < i+1; j++){
+		foo += '+';
+	}
+
+	for (let j =0; j < i+1; j++){
+		foo += '+';
+	}
+	
+	foo += '\n';
 }
+console.log(foo);
