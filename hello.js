@@ -1,10 +1,8 @@
 //변수 선언 
-let output = 0;
+let foo = 1;
 
-// 반복 수행 
-for (let i=0; i <= 100; i++){
-	output += i;
+//반복 
+for(let i=1; i <20; i++){
+	foo *= i;
 }
-
-console.log(output);
-
+console.log(foo);
