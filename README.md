@@ -1,4 +1,131 @@
 # 김미래[202030404]
+
+## **[04월 27일]**
+6. 표준 내장 함수 
+
+- 타이머 함수
+
+    선언 방법
+
+    ```jsx
+    setTimeout(함수,시간)
+    setlnterval(함수,시간)
+    ```
+
+    예제
+
+    ```jsx
+    let foo = setInterval(() => {
+    	console.log("인터벌1초경과");
+    },1000)
+
+    setTimeout(() => {
+    	clearInterval(foo);
+    }, 6000)
+    ```
+
+---
+
+## 6. 객체
+
+- json 예제
+
+    ```jsx
+    let product = {
+    		제품명: '건조 망고', //키 : '데이터'
+    		유형: '당절임',
+    		원산지: '필리핀'
+    	};
+
+    console.log(product);
+    console.log(product.제품명); 
+
+    ```
+
+- 배열 예제
+
+    ```jsx
+    let foo = ["사과", "배", "바나나"];
+
+    console.log(foo[0]);
+    ```
+
+- 객체, 반복문
+
+    ```jsx
+    let product = {
+    		제품명: '건조 망고', //키 : '데이터'
+    		유형: '당절임',
+    		원산지: '필리핀'
+    	};
+
+    for( let key in product ){
+    		console.log(`${key}:${product[key]}`);
+    }
+    ```
+
+요소 : 배열 내부 값
+속성 : 객체 내부 값
+
+- 예제
+
+```jsx
+let foo = {
+		name: "건조 망고",
+		price: 1200,
+		print: function(){
+				console.log(`${this.name}-${this.price}`);
+		}
+};
+
+foo.print();
+```
+
+this 가 있을 경우 funtion 을 = > 으로 바꾸지 못한다. (아래 예시)
+
+```jsx
+let foo = {
+		name: "건조 망고",
+		price: 1200,
+		print: => {
+				console.log(`${this.name}-${this.price}`);
+		}
+};
+
+foo.print();
+```
+
+- 생성자 함수와 프로토타입
+
+```jsx
+let product = [
+	{name: '사과', price:1200},
+	{name: '자두', price:1500},
+	{name: '배', price:1100},
+	{name: '딸기', price:1000},
+];
+
+function printProduct(product){
+	console.log(`${product.name}-${product.price}`);
+}
+for(let foo of product ){
+	printProduct(product);
+}
+
+```
+
+```jsx
+function Product(foo, bar){
+	this.foo1 = foo;
+	this.ber1 = bar;
+}
+
+let product = new Product("바나나:,1200);
+
+console.log(product);
+
+```
+
 ## **[04월 13일]**
 1. **익명 함수**  
     - 생성 방법
