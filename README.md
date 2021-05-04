@@ -1,5 +1,153 @@
 # 김미래[202030404]
 
+## **[04월 13일]**
+**생성자 함수** 
+
+- 대문자로 시작 (객체는 소문자)
+
+```jsx
+function Product(name, price){
+	this.name = name;
+	this.price = price; 
+}
+```
+
+**프로토타입**
+
+프로토타입 = 공간 
+
+객체 → 프로토타입에 메소드 지정함. 
+
+```jsx
+Product.prototype.print = funtion(){
+  ~ 
+}
+```
+
+## 7장 표준 내장 객체
+
+[https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects)
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3275e9c7-edeb-4a69-af9a-e517e8b5db24/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3275e9c7-edeb-4a69-af9a-e517e8b5db24/Untitled.png)
+
+모질라에서 제공한 객체 사전, 한 번 흩어보자
+
+( vscode 에서 자동완성기능을 제공한다. )
+
+**기본 자료형과 객체 자료형 차이**
+
+자료형
+
+```jsx
+let number = 23;
+let string = '안녕';
+let boolean = true;
+
+console.log(typrof number); //23
+```
+
+객체
+
+```jsx
+let number = new Number(23);
+let string = new String('hi');
+let boolean = new Boolean(true);
+
+console.log(typeof number); //object 
+```
+
+- 기본 자료형은 속성이나 메소드를 추가하지 못하지만, 프로토타입 이용하면 가능!
+
+```jsx
+let primitiveNumber = 273;
+
+Number.prototype.method = function(){
+	return 'Primitive Method'; 
+};
+
+console.log(primitiveNumber.method());
+```
+
+**Number객체**
+
+```jsx
+let number = 12;
+let number = new Number(21);
+```
+
+- Number객체 **메소드**
+    1. toExponential()   = 숫자 → 지수 표시 로 나타낸 문자열 리턴
+    2. toFixed()             = 숫자 → 고정소수점 로 나타낸 문자열 리턴  
+    3. toPrecision()       = 숫자 → (길이따라) 지수 || 고정소수점 로 나타낸 문자열 리턴 
+
+    ```jsx
+    let foo = 25.123
+    console.log(foo.toExponenial(1)); //25.1  
+    ```
+
+- Number객체 생성자 **함수 속성**
+    1. MAX_VALUE             = js가 나타내는 최대수
+    2. MIN_VALUE 
+    3. NaN                         = js숫자로 못나타냄
+    4. POSITIVE_INFINITY  =양의 무한대 수
+    5. NEGATIVE_INFINITY
+
+    ```jsx
+    let foo = Number.MAX_VALUE;
+    let bar = Number.MAX_VALUE +1;
+
+    console.log(foo); //1.797...
+    console.log(bar); //1.797...
+    ```
+
+    Q. 생성자 함수가 속성을 가질 수 있을까?
+
+    ```jsx
+    function Construtor(){}
+    Constructor.foo = 12;
+    Constructor.bar = function(){};
+
+    console.log(Construtor.foo); //12
+    console.log(Construtor.bar); //function()
+    ```
+
+**String 객체**
+
+```jsx
+let string = '안녕';
+let string = new String('안녕');
+```
+
+- String 객체의 **메소드**
+
+    (종류 너무 많음)
+
+    ```jsx
+    let string = 'a';
+
+    string = string.toUpperCase();
+    console.log(string);
+    ```
+
+    string의 메소드를 쓰고 싶다면 ? 원본 데이터를 변경하지 않기 때문에 따로 저장을 해야 함.
+
+- String 객체의 **메소드 활용**
+
+    ```jsx
+    let foo ="좋은 아침입니다.";
+
+    if(foo.indexOf('아침') >= 0){
+    	console.log("굿모닝");
+    }else{
+    	console.log("굿나잇");
+    }
+
+    //굿나잇
+    ```
+
+- String 객체의 **객체**
+    1. length
+
 ## **[04월 27일]**
 6. 표준 내장 함수 
 
