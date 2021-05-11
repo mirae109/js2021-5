@@ -1,4 +1,184 @@
 # 김미래[202030404]
+## **[05월 11일]**
+### **Date 객체**
+
+get ... ()객체 , set ... () 객체 : FullYear, Month , Day , Hours 등등 
+
+```jsx
+let foo = new Date(); //객체 생성
+console.log(foo);
+```
+
+- 메소드 활용
+1. 시간 더하기 : 객체 +n 을 활용한다.  
+
+    ```jsx
+    let foo = new Date();
+
+    foo.setFullYear(foo.getFullYear() +1);
+    foo.setMonth(foo.getMonth() +1);
+    foo.setDate(foo.getDate() +1);
+
+    console.log(foo);
+    ```
+
+2. 시간 간격 구하기  : 2개 시간을 뺀다 → 일 단위로 나눈다 
+
+    ```jsx
+    let foo = new Date();
+    let before = new Date("Dec 9, 2020");
+
+    let interval = now.getTime() - before.getTime();
+    interval = Math.floor(interval / (1000 * 60 * 60 * 24);
+
+    console.log(interval);
+    ```
+
+### Array 객체
+
+```jsx
+let foo = [10, 3, 4, 20];   //기본 배열 
+let foo = [{}, {}, {}, {}]  //띠용 .. 이걸 아래와 같이 씀. 
+```
+
+```jsx
+let foo = [
+	{
+		//key: value        
+		name: '초콜렛',
+		price: 1000
+	},{
+		name: '마카롱',
+		price: 2000
+	}
+];
+
+let popped = foo.pop();
+console.log(foo);
+console.log(popped);
+
+foo.push(popped);
+foo.push(
+	{
+		name: "딸기",
+		price: 2000
+	},{
+		name: "토마토",
+		price: 2000
+	}
+);
+
+console.log(foo);
+console.log(popped);
+```
+
+( 배열 정렬은 별도의 라이브러리를 주로 쓴다. )
+
+- **ECAMAScript5에서 추가된 메소드**
+1. **forEach** = 인덱스, 아이템 값 둘 다 추출
+
+    ```jsx
+    let foo = [11, 22, 33, 44];
+
+    foo.forEach((item, index) => {
+    	console.log(`${index} - ${item}`);
+    });
+    ```
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3931fd3-59ab-483f-b988-5be7443eaab2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3931fd3-59ab-483f-b988-5be7443eaab2/Untitled.png)
+
+2.  **map()** = 아이템 값만 추출
+
+    ```jsx
+    let foo = [11, 22, 33, 44];
+
+    let bar = foo.map((item, index) => {
+    	return item + 10;
+    });
+    console.log(bar);
+    ```
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/022cff49-8935-47f9-b0ab-f6d0d7526fd9/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/022cff49-8935-47f9-b0ab-f6d0d7526fd9/Untitled.png)
+
+3.  **filter()** = 리턴에 조건달기
+
+    ```jsx
+    let foo = [11, 22, 33, 44];
+    ****
+    let foobar = foo.filter((item, index) => {
+    	return item % 2 == 0;
+    });
+    console.log(foobar);
+    ```
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c0c93cd-17c4-4cfa-916b-2212ee4bcaae/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c0c93cd-17c4-4cfa-916b-2212ee4bcaae/Untitled.png)
+
+### underscore.js 사용하기
+
+1. underscore.js 홈페이지 들어가서 링크를 다른 이름으로 저장하기! (minified는 압축파일)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/591c3ceb-89ac-46cf-a521-20e2abfbfbbd/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/591c3ceb-89ac-46cf-a521-20e2abfbfbbd/Untitled.png)
+
+2. vscode에 파일 넣고, 스크립트 링크 걸기!  그 후 사용한다. 
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/342b9bba-5276-4237-91d7-7a79be971c34/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/342b9bba-5276-4237-91d7-7a79be971c34/Untitled.png)
+
+3. 콘솔창에서 결과를 확인 가능하다
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/93943060-6249-4805-97b5-11698aa8f0cd/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/93943060-6249-4805-97b5-11698aa8f0cd/Untitled.png)
+
+### JSON 객체
+
+1. 문자열 = 큰따옴표 
+2. 모든 키 = 큰따옴표 감싸기
+3. 숫자, 문자열, 불 자료형만 사용 가능 
+
+- **JSON 객체 메소드**
+1. JSON.stringify ( ) 메소드 : 문자열 리턴
+2. JSON.parse ( ) 메소드 : 객체 리턴
+
+# 8장 예외 처리
+
+- 기본 예외 처리 - ifelse문으로 처리한다. ~~너무 복잡해!~~
+- **고급 예외 처리 - try catch finally 구문**
+
+```jsx
+try{
+	//예외
+} catch{
+	//처리
+} finally{
+	//무조건 실행하는 자리
+}
+```
+
+→ 예외상황 ****(배열 길이 음수)
+
+```jsx
+try{
+	const array = new Array(-2000);
+}catch(e){
+	console.log(`${e.name}예외발생`);
+}finally{
+	console.log(`무조건 실행~`);
+}
+
+```
+
+- **throw 키워드  - 강제 예외 발생기**
+
+```jsx
+throw '강제 예외';
+```
+
+```jsx
+const error = new Error('메세지');
+error.name = '엉망진창 오류';
+error.message = '지금은 오류!';
+
+throw error; 
+```
+
 
 ## **[05월 04일]**
 **생성자 함수** 
