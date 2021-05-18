@@ -14,9 +14,87 @@
 	<li><a href="#6">4월 27일 : 객체(1)</a></li><br>
 	5월<br><br>
 	<li><a href="#7">5월 11일 : 객체(2), 예외처리</a></li>
+	<li><a href="#8">5월 18일 : Node.js </a></li>
 	<br><br>
 	
+</div>
+<div id="8">
+	
+## **[05월 18일]**
+### 1. 전역변수
 
+전역 변수/객체/함수 : 모든 곳에서 사용할 수 있는 것들
+
+### 2. process 객체의 속성과 이벤트
+
+### 3. process 객체와 이벤트 개요
+
+이벤트 연결 메소드(on) 과 객체 이벤트를 함께 사용한다. 
+
+- **종료 + 이벤트를 연결합니다**
+
+    on(<이벤트이름>,<이벤트 핸들러>) + exit
+
+    ```jsx
+    process.on('exit',() => {
+    	console.log("process 종료");
+    });
+    ```
+
+    이벤트 핸들러를 , 부터 ~ 끝까지 로 작성했다. 
+
+    이때 화살표 함수로 작성되어졌다. 
+
+- **예외 + 이벤트를 연결합니다**
+
+    on(<이벤트이름>,<이벤트 핸들러>) + uncaughtException
+
+    ```jsx
+    process.on('uncaughtException',() => {
+    	console.log("예외 발생");
+    });
+    ```
+
+### 4. os 모듈
+
+```jsx
+const foo = require('os'); //모듈 추출
+
+console.log(foo.hostname());  //운영체제 호스트 이름 리턴 
+console.log(foo.totalame());  //시스템 총 메모리 리턴 
+```
+
+### 5. url 모듈
+
+```jsx
+const foo = requrire('url');
+
+console.log(foo.parse("https://naver.com"));
+//url문자열을 객체로 변환 후 리턴 
+```
+
+### 6. 파일 시스템 모듈
+
+```jsx
+const fs = require('fs');
+const fs = readFileSync("text.txt");  
+
+console.log(file);             //파일 내용이 16진수로 나옴 
+console.log(file.toString());  //파일 내용이 문자로 나옴 
+```
+
+- 동기적 - 파일 읽기  (fs.readFileSync()메소드)
+- 비동기적 - 파일 읽기  (fs.readFile()메소드)
+
+    → 전체 파일을 읽는 것과 관계없이 실행한다. 
+
+- 동기적 - 파일 쓰기
+
+```jsx
+const fs = require("fs");
+
+fs.writeFileSync("text.txt", "안녕하세요");
+```
 
 
 </div>
