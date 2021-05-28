@@ -15,7 +15,71 @@
 	5월<br><br>
 	<li><a href="#7">5월 11일 : 객체(2), 예외처리</a></li>
 	<li><a href="#8">5월 18일 : Node.js </a></li>
+	<li><a href="#8">5월 25일 : express 모듈 </a></li>
 	<br><br>
+	
+
+</div>
+<div id="9">
+	
+## **[05월 25일]**
+(어려워서 반말로 쓰는 점 양해해 주세요ㅠㅠ)
+	
+VScode에서 Node JS Express를 이용해서  서버를 만들어볼꺼임 왜? 모듈쓰면 서버 만들기 편해서.
+
+근데 Express 모듈이 뭐임? 레고 세트 같은거임
+
+http 서버 모듈쓰면 직접 설정할 게 많은데 미리 있는거 쓰는거임
+
+VScode에서 원하는 폴더를 열고 터미널에 이렇게 입력해
+
+```jsx
+npm init
+
+npm install express
+```
+
+둘 다 따로 입력하고 실행하면 준비는 다 된거임
+
+제대로 시작하기 전에 기본 메소드를 집고 넘어가 볼거임
+
+1. express() 서버 애플리케이션 객체를 생성함
+2. app.use() 요청오면 실행할 함수 지정함
+3. app.listen() 서버 실행함
+
+아직 몰라도 됨. 하나하나 해보자
+
+먼저, 모듈 추출을 하자
+
+```jsx
+const express = require('express');
+```
+
+메소드로 생성자를 만들자 ~~(자바?)~~
+
+```jsx
+const app = express();
+```
+
+request 이벤트 리스너를 생성할 거임
+
+```jsx
+app.use((request, response) => {
+	response.send('<h1>Hello</h1>');
+});
+```
+
+요청,응답 함수를 이용한 거다 웹에 저렇게 띄워질 거임
+
+이제, 드디어 서버를 실행해보자 
+
+```jsx
+app.listen(52273, () => {
+	console.log('Server running at http://127.0.0.1:52273');
+});
+```
+
+실행하면 잘 뜬다.
 	
 </div>
 <div id="8">
