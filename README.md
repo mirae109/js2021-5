@@ -1,6 +1,6 @@
 
 # 김미래[202030404]
-<div id=index>Index</div><br>
+<h2 id=index>Index</h2><br>
 <ul>
 	3월
 	<br><br>
@@ -15,15 +15,142 @@
 	5월<br><br>
 	<li><a href="#7">5월 11일 : 객체(2), 예외처리</a></li>
 	<li><a href="#8">5월 18일 : Node.js </a></li>
-	<li><a href="#8">5월 25일 : express 모듈 </a></li>
+	<li><a href="#9">5월 25일 : express 모듈 </a></li>
+	6월<br><br>
+	<li><a href="#10">6월 01일 : express 모듈 </a></li>
 	<br><br>
 	
+</div>
+<div id="10">
+## **[06월 01일]**
+### 1. 사용할 수 없는 코드
 
+- let 키워드, const 키워드
+- 템플릿 문자열
+- 화살표 함수
+- for of 반복문
+
+### 2. 브라우저 객체 모델
+
+ 참조 사진 잘 보기 (중요!)
+
+3. window 객체 : 웹 페이지  자체를 나타냄 
+
+4. screen 객체 
+
+5. location 
+제이쿼리 쓰는 법: $(매개변수).foo(매개변수)
+
+- 제이쿼리 객체 생성
+
+```jsx
+$('h1');
+$('<h1><h1>');
+```
+
+### 3. 문서 객체 선택
+
+```jsx
+$('h1')
+$('h1.logo')
+```
+
+```jsx
+<script>
+$(document).ready(funtion(){
+	var $headers = $('h1');
+for(var i = 0; i < $headers.length; i++){
+if( i % 2 == 1 ) {  
+		var domElement = $headers.get(i); 
+		$(domElement).css('backgroundColor', 'red');
+	}
+}
+</script>
+
+```
+
+- odd선택자 , even선택자
+
+### 5. 문서 객체 조작
+
+```jsx
+$('h1').txet()
+$('h1').html()
+```
+
+```jsx
+<script>
+        $(document).ready(function(){
+            for(var i = 0; i<256; i++){
+                $('<div></div>').css({
+                    height: 2,
+                    background: 'rgb(' +i+ ',' +i+ ',' +i+ ')'
+                }).appendTo('body');
+            }
+        });
+    </script>
+```
+.each 의 역할: for문 대신 사용한다. 
+
+```jsx
+<script>
+        $(document).ready(function(){
+                $('img').each(function (index, element){
+                   $(this).attr('src', 'http://plachold.it/' + (index+1) *100 + 'x100');
+                });
+        });
+    </script>
+```
+
+### 6. 문서 객체 생성
+
+```jsx
+<script>
+    $(document).ready(function(){
+       $('<h1></h1>')
+            .text('안녕하세요')
+            .attr('data-test', 'test')
+            .css({backgroundColor: 'red',color: 'white'})
+            .appendTo('body');
+    });
+    </script>
+```
+	
+### 7. 이벤트
+
+```jsx
+<script>
+    $(document).ready(function(){
+       $('h1').on('click', function (event){
+            var text = $(this).text();
+            alert(text);
+       });
+    });
+    </script>
+```
+
+```jsx
+<script>
+    $(document).ready(function(){
+       $('h1').on('click', function (event){
+            $('<h1></h1>').text($(this).text()).appendTo('body');
+       });
+    });
+    </script>
+</head>
+<body>
+    <h1>ON</h1>
+</body>
+```
+
+8. 애니메이션 
+
+$(선택자).animate(속성, 시간, 콜백 함수);
+	
 </div>
 <div id="9">
 	
 ## **[05월 25일]**
-(어려워서 반말로 쓰는 점 양해해 주세요ㅠㅠ)
 	
 VScode에서 Node JS Express를 이용해서  서버를 만들어볼꺼임 왜? 모듈쓰면 서버 만들기 편해서.
 
